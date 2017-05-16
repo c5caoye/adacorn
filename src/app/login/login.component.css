@@ -1,0 +1,90 @@
+/*h1, h2, h3, h4, h5, h6, p {
+    color: white;
+}*/
+h2 {
+    color: white;
+}
+
+input {
+    background-color: #999;
+}
+
+#login-button {
+    background-color: #47a3da;
+    color: white;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-weight: 300;
+    line-height: 1.5em;
+}
+
+form {
+    padding-top: 25px;
+}
+
+.login {
+    /*background-image: url('../../assets/img/background.jpg');*/
+    /*background-size: cover;*/
+    height: 100%;
+    /*padding: -20px;*/
+}
+
+.card-header {
+  padding: 15px;
+  border-radius: 5px;
+  margin: -20px 15px 0;
+  border-radius: 3px;
+  background: linear-gradient(60deg, #47a3da, #40cca0);
+  box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(71, 163, 218, 0.4);
+  z-index: 3;
+  color: #FFFFFF;
+  float: left;
+  text-align: center;
+}
+
+.card-header i {
+  font-size: 30px;
+  line-height: 50px;
+  width: 50px;
+  height: 50px;
+}
+
+.card {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    margin: 25px 0 10px 0;
+    box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+    border-radius: 6px;
+    color: rgba(0, 0, 0, 0.87);
+    background: #fff;
+    /*padding: 20px;*/
+}
+
+.card-content {
+  padding: 15px 20px;
+  position: relative;
+  text-align: right;
+  padding-top: 10px;
+}
+
+.card-label {
+  color: #999999;
+  font-size: 14px;
+  margin: 0 0 10px;
+  margin-bottom: 0;
+  text-align: right;
+}
+/*.image {
+  margin-top: -100px;
+}*/
+.column {
+  max-width: 450px;
+  margin-top: 20%;
+}
+
+.card-footer {
+  margin: 0 20px 10px;
+  padding-top: 10px;
+  border-top: 1px solid #eeeeee;
+  display: block;
+}

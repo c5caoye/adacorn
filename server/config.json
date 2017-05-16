@@ -1,0 +1,5 @@
+{
+    "connectionString": "mongodb://localhost/adacorndb",
+    "apiUrl": "http://localhost:4000",
+    "secret": "dihi3un1f08*)G*)DWG&db1u"
+}

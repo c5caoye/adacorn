@@ -1,0 +1,17 @@
+<div class="ui negative message" *ngIf="message" [ngClass]="{ 'alert': message, 'alert-success': message.type === 'success', 'alert-danger': message.type === 'error' }">
+  <i class="close icon"></i>
+  <div class="header">
+    Error
+  </div>
+  <p>{{message.text}}
+  </p>
+  <script>
+    $('.message .close')
+      .on('click', function() {
+          console.log("close");
+        $(this)
+          .closest('.message')
+          .transition('fade');
+      });
+  </script>
+</div>

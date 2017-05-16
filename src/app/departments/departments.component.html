@@ -1,0 +1,35 @@
+<h1>Departments</h1>
+<table class="ui sortable celled table">
+    <thead>
+        <tr>
+            <th>
+                Code
+            </th>
+            <th>
+                Department
+            </th>
+            <th>
+                President / Director
+            </th>
+            <th>
+                Active Members
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let d of departments">
+            <td>
+                <a (click)="gotoDetail(d.code)">{{d.code}}</a>
+            </td>
+            <td>
+                {{d.name}}
+            </td>
+            <td>
+                {{d.p ? d.p : d.director}}
+            </td>
+            <td>
+                {{d.members.length}}
+            </td>
+        </tr>
+    </tbody>
+</table>

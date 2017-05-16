@@ -1,0 +1,148 @@
+<div *ngIf="department; else loading">
+  <h1><a (click)="goBackToDepartments()">Departments</a> / {{department.name}}</h1>
+  <h3>{{department.code}}</h3>
+  <div class="ui grid">
+    <div class="ui stackable three column row">
+      <div class="column">
+        <div class="card">
+          <div class="card-header">
+            <i class="users icon"></i>
+          </div>
+          <div class="card-content">
+            <p class="card-label">
+              Active Memebers
+            </p>
+            <div>
+              <h3>{{department.members.length}}</h3>
+            </div>
+          </div>
+          <div class="card-footer">
+            <p class="time-from-now">I don't know what to put.</p>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="card">
+          <div class="card-header user">
+            <i class="user icon"></i>
+          </div>
+          <div class="card-content">
+            <p class="card-label">
+              {{department.p ? "President" : "Director"}}
+            </p>
+            <div>
+              <h3>{{department.p ? department.p : department.director}}</h3>
+            </div>
+          </div>
+          <div class="card-footer">
+            <p class="time-from-now"><a href="">Contact</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="card">
+          <div class="card-header event">
+            <i class="Calendar icon"></i>
+          </div>
+          <div class="card-content">
+            <p class="card-label">
+              Ongoing Events
+            </p>
+            <div>
+              <h3>Coming Soon</h3>
+            </div>
+          </div>
+          <div class="card-footer">
+            <p class="time-from-now"><a href="">View</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="">
+      <table id="section-to-print" class="ui sortable celled table">
+        <thead>
+          <tr>
+            <th class="collapsing">
+            </th>
+            <th id="stunum" class="sort">
+              Student #
+            </th>
+            <th id="lastName" class="sort">
+              Last Name
+            </th>
+            <th id="firstName" class="sort">
+              First Name
+            </th>
+            <th id="dept" class="">
+              Departments
+            </th>
+            <th id="email" class="sort">
+              Email
+            </th>
+            <th id="phone" class="sort">
+              Phone
+            </th>
+            <!-- <th id="priority" class="sort">
+                                Priority
+                            </th> -->
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let member of members">
+            <td class="collapsing">
+              <div class="ui fitted slider checkbox">
+                <input type="checkbox" name="members" value={{member.stunum}} />
+                <label></label>
+              </div>
+            </td>
+            <td>
+              {{member.stunum}}
+            </td>
+            <td>
+              {{member.lastName}}
+            </td>
+            <td>
+              {{member.firstName}}
+            </td>
+            <td>
+              <!-- {% for d in member.department %}<span class="dept-tag status-{{d.status}}">{{d.dept}} </span>{% endfor %} -->
+              <div class="dept-tag" *ngFor="let d of member.department">{{d}}</div>
+            </td>
+            <td>
+              <a href="mailto:{{member.email}}">{{member.email}}</a>
+            </td>
+            <td>
+              <a href="tel:{{member.phone}}">{{member.phone}}</a>
+            </td>
+            <!-- <td>
+                                    {{member.priority}}
+                                </td> -->
+          </tr>
+        </tbody>
+        <tfoot class="full-width">
+          <tr>
+            <th></th>
+            <th colspan="6">
+              <div class="ui right floated small primary labeled icon button">
+                <i class="user icon"></i> Add User
+              </div>
+              <div class="ui small  button">
+                Email
+              </div>
+              <div class="ui small  disabled button">
+                Inactivate
+              </div>
+            </th>
+          </tr>
+        </tfoot>
+      </table>
+
+  </div>
+</div>
+<ng-template #loading>
+  <div class="ui {{department?'':'active'}} dimmer">
+    <div class="ui loader"></div>
+  </div>
+</ng-template>

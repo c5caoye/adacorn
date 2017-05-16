@@ -1,28 +1,114 @@
-h1 {
-  font-size: 1.2em;
-  color: #999;
-  margin-bottom: 0;
+nav {
+    margin: 0;
+    padding: 15px;
+    width: 250px;
+    background-color: #1B1C1D;;
+    height: 100%; /* Full height */
+    position: fixed; /* Make it stick, even on scroll */
+    overflow: auto; /* Enable scrolling if the sidenav has too much content */
+    align-content: center;
 }
-h2 {
-  font-size: 2em;
-  margin-top: 0;
-  padding-top: 0;
+
+ul {
+    list-style-type: none;
+    padding: 0;
 }
+
+ul li {
+}
+
+a.user-profile-button {
+    white-space: nowrap;
+}
+
+.user-container {
+    white-space: nowrap;
+    vertical-align: middle;
+
+    /*margin: 20px;*/
+
+}
+.username-container {
+    display: inline-block;
+    /*margin-bottom: 10px;*/
+    position: relative;
+top: 60%;
+transform: translateY(-50%);
+margin-top:5px;
+}
+
 nav a {
-  padding: 5px 10px;
-  text-decoration: none;
-  margin-top: 10px;
-  display: inline-block;
-  background-color: #eee;
-  border-radius: 4px;
-}
-nav a:visited, a:link {
-  color: #607D8B;
-}
-nav a:hover {
-  color: #039be5;
-  background-color: #CFD8DC;
+    display: block;
+    cursor: pointer;
+    width: 100%;
+    padding: 15px;
+    align-content: center;
+    color: white;
+    border-radius: 4px;
+    margin-bottom: 10px;
 }
 nav a.active {
-  color: #039be5;
+    background-color: #47a3da;
+    box-shadow: 0px 4px 20px 0px rgba(71,163,218, 0.14), 0 7px 10px -5px rgba(0, 188, 212, 0.4);
+}
+nav a.nav-item:hover {
+    background-color: rgba(255,255,255, 0.05);
+}
+
+ul li a.active {
+    background-color: #47a3da;
+}
+
+img.logo-brand {
+    height: 20px;
+    margin: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+img.profile-photo {
+    height: 25px;
+    margin-left: auto;
+    margin-right: 15px;
+    border-radius: 13px;
+    border: 2px solid white;
+    display: inline-block;
+}
+
+nav a i {
+    margin-right: 10px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: white;
+    background-image: linear-gradient(to right, #333, #666, #333);
+}
+
+.app-container {
+    width: auto;
+    margin-left: 250px;
+    padding: 20px;
+    background-color: #eee;
+    height: 100%;
+}
+
+.image-background-container {
+    width: auto;
+    margin-left: 250px;
+    /*padding: 20px;*/
+    background-color: #eee;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.image-background {
+    height: 100%;
+    width: 100%;
+}
+
+navbar: {
+    height: 100%;
 }

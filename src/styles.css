@@ -1,23 +1,104 @@
 /* Master Styles */
-h1 {
-  color: #369;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 250%;
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
-h2, h3 {
-  color: #444;
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: lighter;
+
+body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4 {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 300;
+  line-height: 1.5em;
 }
-body {
-  margin: 2em;
+
+.serif-font {
+  font-family: "Roboto Slab", "Times New Roman", serif;
 }
-body, input[text], button {
-  color: #888;
-  font-family: Cambria, Georgia;
+
+a {
+    cursor: pointer;
 }
-/* . . . */
-/* everywhere else */
-* {
-  font-family: Arial, Helvetica, sans-serif;
+
+.card {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  margin: 25px 0 10px 0;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+  border-radius: 6px;
+  color: rgba(0, 0, 0, 0.87);
+  background: #fff;
+}
+
+.card-header {
+  padding: 15px;
+  border-radius: 5px;
+  margin: -20px 15px 0;
+  border-radius: 3px;
+  background: linear-gradient(60deg, #ffa726, #fb8c00);
+  box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(255, 152, 0, 0.4);
+  z-index: 3;
+  color: #FFFFFF;
+  float: left;
+  text-align: center;
+}
+
+.card-header.user {
+    background: linear-gradient(60deg, #47a3da, #40cca0);
+    box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(28, 64, 85, 0.4);
+}
+.card-header.event {
+    background: linear-gradient(60deg, #ef5350, #e53935);
+    box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(244, 67, 54, 0.4);
+}
+
+.card-header.notification {
+    background: linear-gradient(60deg, #66bb6a, #43a047);
+    box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(76, 175, 80, 0.4);
+}
+
+.card-content {
+  padding: 15px 20px;
+  position: relative;
+  text-align: right;
+  padding-top: 10px;
+}
+
+.card-header i {
+  font-size: 30px;
+  line-height: 50px;
+  width: 50px;
+  height: 50px;
+}
+
+.card-label {
+  color: #999999;
+  font-size: 14px;
+  margin: 0 0 10px;
+  margin-bottom: 0;
+  text-align: right;
+}
+
+.card-title {
+  margin-top: 0;
+  margin-bottom: 5px;
+  color: #3C4858;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+font-weight: 300;
+line-height: 1.5em;
+}
+
+.card-footer {
+  margin: 0 20px 10px;
+  padding-top: 10px;
+  border-top: 1px solid #eeeeee;
+  display: block;
+}
+
+.dept-tag {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.dept-tag:last-child {
+  margin-right: 0;
 }

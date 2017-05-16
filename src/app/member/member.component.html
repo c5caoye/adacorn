@@ -1,0 +1,171 @@
+<div *ngIf="member; else loading">
+  <h1><a (click)="goBackToMembers()">Members</a> / {{member.firstName}} {{member.lastName}}</h1>
+  <h3>{{member.stunum}}</h3>
+  <!-- <div class="ui grid">
+    <div class="ui stackable three column row">
+      <div class="column">
+        <div class="card">
+          <div class="card-header">
+            <i class="members icon"></i>
+          </div>
+          <div class="card-content">
+            <p class="card-label">
+              Active Memebers
+            </p>
+            <div>
+              <h3>{{department.members.length}}</h3>
+            </div>
+          </div>
+          <div class="card-footer">
+            <p class="time-from-now">I don't know what to put.</p>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="card">
+          <div class="card-header member">
+            <i class="members icon"></i>
+          </div>
+          <div class="card-content">
+            <p class="card-label">
+              {{department.p ? "President" : "Director"}}
+            </p>
+            <div>
+              <h3>{{department.p ? department.p : department.director}}</h3>
+            </div>
+          </div>
+          <div class="card-footer">
+            <p class="time-from-now"><a href="">Contact</a></p>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="card">
+          <div class="card-header event">
+            <i class="members icon"></i>
+          </div>
+          <div class="card-content">
+            <p class="card-label">
+              Ongoing Events
+            </p>
+            <div>
+              <h3>Coming Soon</h3>
+            </div>
+          </div>
+          <div class="card-footer">
+            <p class="time-from-now"><a href="">View</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div> -->
+  <div class="card">
+    <div class="card-content">
+      <table id="profile-table" class="ui very basic table">
+        <tr>
+          <th class="vertical">
+            First Name
+          </th>
+          <td>
+            {{member.firstName}}
+          </td>
+        </tr>
+        <tr>
+          <th class="vertical">
+            Last Name
+          </th>
+          <td>
+            {{member.lastName}}
+          </td>
+        </tr>
+        <tr>
+          <th class="vertical">
+            Preferred Name
+          </th>
+          <td>
+            {{member.preferredName}}
+          </td>
+        </tr>
+        <tr>
+          <th class="vertical">
+            Chinese Name
+          </th>
+          <td>
+            {{member.chineseName}}
+          </td>
+        </tr>
+        <tr>
+          <th class="vertical">
+            Student Number
+          </th>
+          <td>
+            {{member.stunum}}
+          </td>
+        </tr>
+        <tr>
+          <th class="vertical">
+            UTmail
+          </th>
+          <td>
+            {{member.UTmail}}
+          </td>
+        </tr>
+        <tr>
+          <th class="vertical">
+            Secondary Email
+          </th>
+          <td>
+            {{member.email}}
+          </td>
+        </tr>
+        <tr>
+          <th class="vertical">
+            Wechat
+          </th>
+          <td>
+            {{member.wechat}}
+          </td>
+        </tr>
+        <tr>
+          <th class="vertical">
+            Phone
+          </th>
+          <td>
+            {{member.phone}}
+          </td>
+        </tr>
+        <tr>
+          <th class="vertical">
+            Status
+          </th>
+          <td>
+            <span class="status-text-{{member.status}}">{{member.status}}
+                            </span>
+          </td>
+        </tr>
+        <tr>
+          <th class="vertical">
+            Year
+          </th>
+          <td>
+            {{member.year}}
+          </td>
+        </tr>
+        <tr>
+          <th class="vertical">
+            Major
+          </th>
+          <td>
+            {{member.major}}
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+<ng-template #loading>
+  <div class="ui {{member?'':'active'}} dimmer">
+    <div class="ui loader"></div>
+  </div>
+</ng-template>

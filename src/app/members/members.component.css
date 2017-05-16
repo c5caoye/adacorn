@@ -1,0 +1,13 @@
+.dept-tag {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.dept-tag:last-child {
+  margin-right: 0;
+}
+
+.time-from-now {
+    font-size: 12px;
+    color: #999999;
+}

@@ -1,17 +1,33 @@
-import { Component } from "@angular/core";
+import { Component, OnInit }        from "@angular/core";
+import { AuthGuard }                from "./_guard/auth.guard";
+import { MemberService }            from './member.service';
+import { AuthenticationService }    from './authentication.service';
 
 @Component({
     selector: "my-app",
-    template: `
-    <h1>{{title}}</h1>
-    <nav>
-      <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
-      <a routerLink="/heroes" routerLinkActive="active">Heroes</a>
-    </nav>
-    <router-outlet></router-outlet>
-    `,
+    templateUrl: "./app.component.html",
     styleUrls: [ "./app.component.css" ]
 })
 export class AppComponent {
-    title = 'Tour of Heroes';
+    currentUser: any;
+    title = 'ADACORN';
+    name = 'Jiacheng Jiang';
+    loggedIn = false;
+
+    constructor(
+        // private memberService : MemberService;
+        private authenticationService : AuthenticationService,
+    ) {}
+
+    ngOnInit(): void {
+        let user = this.authenticationService.getCurrentUser();
+        user ? (this.loggedIn = true) : this.loggedIn = false;
+        this.currentUser = JSON.parse(user);
+        this.name = this.loggedIn ? this.currentUser.firstName + " " + this.currentUser.lastName : null;
+    }
+
+    logout(): void {
+        this.authenticationService.logout()
+        this.loggedIn = false;
+    }
 }
