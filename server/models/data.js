@@ -170,7 +170,7 @@ memberSchema.plugin(passportLocalMongoose, {
     usernameField: 'UTmail'
 });
 
-mongoose.connect('mongodb://localhost/adacorndb');
+mongoose.connect('mongodb://adacorntest:office5113@adacorn-shard-00-00-i8ikr.mongodb.net:27017,adacorn-shard-00-01-i8ikr.mongodb.net:27017,adacorn-shard-00-02-i8ikr.mongodb.net:27017/adacorndb?ssl=true&replicaSet=ADACORN-shard-0&authSource=admin');
 
 let schema = {
     'Member': mongoose.model('Member', memberSchema),
