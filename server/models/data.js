@@ -14,10 +14,6 @@ let departmentSchema = new Schema({
     director: {
         type: String,
     },
-    // members: {
-    //     type: [],
-    //     default: []
-    // },
     code: {
         type: String,
         required: true,
@@ -92,7 +88,7 @@ let applicationSchema = new Schema({
         default: ''
     },
     lastModified: {
-        type: timestamp
+        type: String,
     }
 });
 
