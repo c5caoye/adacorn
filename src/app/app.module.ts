@@ -6,22 +6,22 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule }         from './app-routing.module';
 
-import { MemberService }            from './member.service';
-import { DepartmentService }            from './department.service';
-import { AlertService }             from './alert.service';
-import { AuthenticationService }    from './authentication.service';
+import { MemberService }            from './services/member.service';
+import { DepartmentService }        from './services/department.service';
+import { AlertService }             from './services/alert.service';
+import { AuthenticationService }    from './services/authentication.service';
 import { AuthGuard }                from './_guard/auth.guard';
 
 import { AppComponent }             from './app.component';
-import { DashboardComponent }       from './dashboard/dashboard.component';
-import { NotificationComponent }    from './notification/notification.component';
-import { CardComponent }            from './card/card.component';
-import { MembersComponent }         from './members/members.component';
-import { LoginComponent }           from './login/login.component';
-import { DepartmentsComponent } from './departments/departments.component';
-import { DepartmentComponent } from './department/department.component';
-import { MemberComponent } from './member/member.component';
-import { AlertComponent } from './alert/alert.component';
+import { DashboardComponent }       from './components/dashboard/dashboard.component';
+import { NotificationComponent }    from './components/notification/notification.component';
+import { CardComponent }            from './components/card/card.component';
+import { MembersComponent }         from './components/members/members.component';
+import { LoginComponent }           from './components/login/login.component';
+import { DepartmentsComponent } from './components/departments/departments.component';
+import { DepartmentComponent } from './components/department/department.component';
+import { MemberComponent } from './components/member/member.component';
+import { AlertComponent } from './components/alert/alert.component';
 
 @NgModule({
   declarations: [

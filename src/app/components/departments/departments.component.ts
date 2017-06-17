@@ -2,8 +2,8 @@ import { Component, OnInit }    from '@angular/core';
 import { Router }               from '@angular/router'
 import { trigger, state, animate, transition, style }   from '@angular/animations';
 
-import { DepartmentService }    from '../department.service';
-import { Department }           from '../department'
+import { DepartmentService }    from '../../services/department.service';
+import { Department }           from '../../models/department'
 
 @Component({
   selector: 'app-departments',

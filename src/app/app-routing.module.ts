@@ -2,13 +2,13 @@ import { NgModule }                 from '@angular/core';
 import { RouterModule, Routes }     from '@angular/router';
 
 
-import { DashboardComponent }       from './dashboard/dashboard.component';
-import { NotificationComponent }    from './notification/notification.component';
-import { MembersComponent }         from './members/members.component';
-import { MemberComponent }         from './member/member.component';
-import { LoginComponent }           from './login/login.component';
-import { DepartmentsComponent } from './departments/departments.component';
-import { DepartmentComponent } from './department/department.component';
+import { DashboardComponent }       from './components/dashboard/dashboard.component';
+import { NotificationComponent }    from './components/notification/notification.component';
+import { MembersComponent }         from './components/members/members.component';
+import { MemberComponent }         from './components/member/member.component';
+import { LoginComponent }           from './components/login/login.component';
+import { DepartmentsComponent } from './components/departments/departments.component';
+import { DepartmentComponent } from './components/department/department.component';
 
 import { AuthGuard }                from './_guard/auth.guard';
 

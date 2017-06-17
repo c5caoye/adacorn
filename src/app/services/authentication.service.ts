@@ -3,6 +3,8 @@ import { Http, Headers, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 
+import { User } from '../models/user'
+
 import 'rxjs/add/operator/map'
 
 @Injectable()
@@ -14,17 +16,17 @@ export class AuthenticationService {
         private http: Http,
         private router: Router) { }
 
-    login(username: string, password: string) {
+    login(username: string, password: string, returnUrl: string) {
         console.log(JSON.stringify({ username: username, password: password }));
         return this.http.post('/u/auth', { username: username, password: password }, {headers: this.headers})
             .map((response: Response) => {
                 // login successful if there's a jwt token in the response
-                console.log(response);
-                let user = response.json();
+                let user = <User> response.json();
                 console.log(user);
                 if (user && user.token) {
                     // store user details and jwt token in local storage to keep user logged in between page refreshes
                     localStorage.setItem('currentUser', JSON.stringify(user));
+                    this.router.navigate([returnUrl]);
                 }
             });
     }

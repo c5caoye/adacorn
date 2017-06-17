@@ -18,7 +18,6 @@ function auth(username, password) {
       if (err)
         console.log("error") && reject(err.name + ': ' + err.message);
       if (user) {
-        console.log("correct password")
         resolve({
           stunum: user.stunum,
           firstName: user.firstName,
@@ -29,7 +28,7 @@ function auth(username, password) {
         });
       } else {
         console.log("wrong password")
-        resolve();
+        reject("Username or password is incorrect.");
       }
     });
   })

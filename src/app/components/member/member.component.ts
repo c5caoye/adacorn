@@ -3,17 +3,17 @@ import { ActivatedRoute, Params, Router }   from '@angular/router';
 import { Location }                 from '@angular/common';
 import { trigger, state, animate, transition, style }   from '@angular/animations';
 
-import { DepartmentService }    from '../department.service';
-import { Department }           from '../department';
-import { MemberService }    from '../member.service';
-import { Member }           from '../member';
+import { DepartmentService }    from '../../services/department.service';
+import { Department }           from '../../models/department';
+import { MemberService }    from '../../services/member.service';
+import { Member }           from '../../models/member';
 
 import 'rxjs/add/operator/switchMap';
 
 @Component({
-  selector: 'app-department',
-  templateUrl: './department.component.html',
-  styleUrls: ['./department.component.css'],
+  selector: 'app-member',
+  templateUrl: './member.component.html',
+  styleUrls: ['./member.component.css'],
   animations: [trigger(
     'openClose',
     [
@@ -30,9 +30,8 @@ import 'rxjs/add/operator/switchMap';
         'style': 'display: block;'
     },
 })
-export class DepartmentComponent implements OnInit {
-  department: Department;
-  members: Member[];
+export class MemberComponent implements OnInit {
+  member: Member;
 
   constructor(
     private departmentService: DepartmentService,
@@ -44,15 +43,15 @@ export class DepartmentComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params
-      .switchMap((params: Params) => this.departmentService.getDepartmentByCode(params['code']))
-      .subscribe(dept => this.department = dept);
-
-    this.route.params
-        .switchMap((params: Params) => this.memberService.getMembersByDepartmentCode(params['code']))
-        .subscribe(members => this.members = members);
+        .switchMap((params: Params) => this.memberService.getMemberByStunum(params['stunum']))
+        .subscribe(member => this.member = member);
   }
 
-  goBackToDepartments(): void {
-      this.router.navigate(['/dept']);
+  goBack(): void {
+      this.location.back();
+  }
+
+  goBackToMembers(): void {
+      this.router.navigate(['/members']);
   }
 }

@@ -4,7 +4,7 @@ import { Headers, Http, RequestOptions, Response }  from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/map';
 
-import { Member }                                   from './member';
+import { Member }                                   from '../models/member';
 
 @Injectable()
 export class MemberService {

@@ -1,6 +1,6 @@
 <div *ngIf="department; else loading">
   <h1><a (click)="goBackToDepartments()">Departments</a> / {{department.name}}</h1>
-  <h3>{{department.code}}</h3>
+  <h3 *ngIf="department">{{department.code}}</h3>
   <div class="ui grid">
     <div class="ui stackable three column row">
       <div class="column">
@@ -13,7 +13,7 @@
               Active Memebers
             </p>
             <div>
-              <h3>{{department.members.length}}</h3>
+              <h3 *ngIf="members">{{members.length}}</h3>
             </div>
           </div>
           <div class="card-footer">
@@ -60,6 +60,21 @@
     </div>
 
   </div>
+
+  <div class="ui inverted segment">
+      <div class="ui inverted secondary menu">
+        <a class="item">
+          Email
+        </a>
+        <a class="item">
+          Delete
+        </a>
+        <a class="item">
+          Friends
+        </a>
+      </div>
+    </div>
+
   <div class="">
       <table id="section-to-print" class="ui sortable celled table">
         <thead>

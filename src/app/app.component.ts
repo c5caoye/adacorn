@@ -1,7 +1,11 @@
-import { Component, OnInit }        from "@angular/core";
+import { Component, OnInit, Input }        from "@angular/core";
+
 import { AuthGuard }                from "./_guard/auth.guard";
-import { MemberService }            from './member.service';
-import { AuthenticationService }    from './authentication.service';
+
+import { MemberService }            from './services/member.service';
+import { AuthenticationService }    from './services/authentication.service';
+
+import { User }                     from './models/user';
 
 @Component({
     selector: "my-app",
@@ -9,10 +13,12 @@ import { AuthenticationService }    from './authentication.service';
     styleUrls: [ "./app.component.css" ]
 })
 export class AppComponent {
-    currentUser: any;
     title = 'ADACORN';
-    name = 'Jiacheng Jiang';
-    loggedIn = false;
+
+
+    currentUser: User;
+    name: string;
+    @Input() loggedIn = false;
 
     constructor(
         // private memberService : MemberService;
@@ -24,6 +30,7 @@ export class AppComponent {
         user ? (this.loggedIn = true) : this.loggedIn = false;
         this.currentUser = JSON.parse(user);
         this.name = this.loggedIn ? this.currentUser.firstName + " " + this.currentUser.lastName : null;
+        this.title = this.name + '| ADACORN'
     }
 
     logout(): void {

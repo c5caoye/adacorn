@@ -23,4 +23,6 @@ function auth(req, res) {
   });
 }
 
-function register(req, res) {}
+function register(req, res) {
+
+}

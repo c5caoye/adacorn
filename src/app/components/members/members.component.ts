@@ -1,7 +1,7 @@
 import { Component, OnInit }                            from '@angular/core';
 import { ActivatedRoute, Params, Router }               from '@angular/router';
-import { MemberService }                                from '../member.service';
-import { Member }                                       from '../member';
+import { MemberService }                                from '../../services/member.service';
+import { Member }                                       from '../../models/member';
 import * as moment                                      from 'moment';
 import { trigger, state, animate, transition, style }   from '@angular/animations';
 let now = moment().format('LLLL');

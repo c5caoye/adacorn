@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 
-import { Member } from '../member';
-import { MemberService } from '../member.service';
+import { Member } from '../../models/member';
+import { MemberService } from '../../services/member.service';
 import { trigger, state, animate, transition, style }   from '@angular/animations';
 
 @Component({

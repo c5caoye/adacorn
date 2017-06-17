@@ -1,10 +1,10 @@
-import { Injectable }           from '@angular/core';
+import { Injectable }                                     from '@angular/core';
 import { Headers, Http, RequestOptions, Response }        from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/map';
 
-import { Department }               from './department';
+import { Department }               from '../models/department';
 
 @Injectable()
 export class DepartmentService {
