@@ -1,4 +1,4 @@
-# 以下内容来自 Angular CLI 自动生成
+![header](./header.png)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.1.
 
