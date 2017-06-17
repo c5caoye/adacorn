@@ -14,14 +14,18 @@ let departmentSchema = new Schema({
     director: {
         type: String,
     },
-    members: {
-        type: [],
-        default: []
-    },
+    // members: {
+    //     type: [],
+    //     default: []
+    // },
     code: {
         type: String,
         required: true,
         unique: true
+    },
+    description: {
+        type: String,
+        default: ''
     }
 }, {
     collection: 'departments'
@@ -32,12 +36,21 @@ let notificationSchema = new Schema({
         type: String,
         required: true
     },
-    title: {
-        type: String
-    },
-    source: {
+    content: {
         type: String,
         required: true
+    }
+}, {
+    collection: 'notifications'
+});
+
+let userNotificationSchema = new Schema({
+    userId: {
+        type: String,
+        required: true
+    },
+    content: {
+        type: String
     },
     read: {
         type: "boolean",
@@ -45,7 +58,7 @@ let notificationSchema = new Schema({
         required: true
     },
 }, {
-    collection: 'notifications'
+    collection: 'userNotifications'
 });
 
 let eventSchema = new Schema({
@@ -74,20 +87,19 @@ let applicationSchema = new Schema({
         type: String,
         required: true
     },
-    type: {
+    description: {
         type: String,
-        required: true
+        default: ''
     },
-    department: {
-        type: String,
-        required: true
+    lastModified: {
+        type: timestamp
     }
 });
 
 // Priority:
 //     0: Applicant
 //     1: Member
-//     2: Dept VP
+//     2: Dept Director
 //     3: VP
 //     4: P
 
@@ -143,25 +155,9 @@ let memberSchema = new Schema({
     department: {
         type: []
     },
-    // for tech members
-    rank: {
-        type: "number"
-    },
-    // for alpha => beta assessments
-    assessment: {
-        type: "number"
-    },
-    notifications: {
-        type: [String],
-        default: []
+    level: {
+        type: "number", default: 0
     }
-    // if the member is participating any projects
-    // project: {
-    //     project: [Schema.Types.ObjectId]
-    // },
-    // level: {
-    //     type: "number", default: 1
-    // }
 }, {
     collection: 'members'
 });
