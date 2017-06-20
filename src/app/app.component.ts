@@ -31,10 +31,22 @@ export class AppComponent {
         this.currentUser = JSON.parse(user);
         this.name = this.loggedIn ? this.currentUser.firstName + " " + this.currentUser.lastName : null;
         this.title = this.name + '| ADACORN'
+        console.log(this.title);
     }
 
     logout(): void {
         this.authenticationService.logout()
         this.loggedIn = false;
+    }
+
+    refresh(): void {
+        console.log('refreshing appComponent')
+        let user = this.authenticationService.getCurrentUser();
+        user ? (this.loggedIn = true) : this.loggedIn = false;
+        this.currentUser = JSON.parse(user);
+        this.name = this.loggedIn ? this.currentUser.firstName + " " + this.currentUser.lastName : null;
+        this.title = this.name + '| ADACORN'
+        console.log(this.loggedIn);
+        console.log(this.title);
     }
 }
