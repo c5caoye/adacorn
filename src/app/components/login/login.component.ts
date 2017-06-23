@@ -4,6 +4,8 @@ import { AuthenticationService }    from '../../services/authentication.service'
 import { AlertService }             from '../../services/alert.service';
 import { trigger, state, animate, transition, style }   from '@angular/animations';
 
+import { AppComponent }             from '../../app.component';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -33,6 +35,7 @@ export class LoginComponent implements OnInit {
         private route: ActivatedRoute,
         private router: Router,
         private authenticationService: AuthenticationService,
+        private appComponent: AppComponent,
         private alertService: AlertService) { }
 
   ngOnInit() {
@@ -52,6 +55,7 @@ export class LoginComponent implements OnInit {
             .subscribe(
                 data => {
                     this.router.navigate([this.returnUrl]);
+                    this.appComponent.refresh(); // After user logged in, refresh the side bar.
                     this.loading = false;
                 },
                 error => {
